@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react";
 import { Tag, Share2, Mail, Globe, X, ZoomIn } from "lucide-react";
 import { useTheme } from "../contexts/ThemeContext";
-import qlaseImage from "figma:asset/42ff43e6c70423d1c4f25c3e971f04cc65fed866.png";
-import caffeKatImage from "figma:asset/476ffe7e94a44b27ec9b4e18d9dad7aeed57f1ea.png";
-import tikTalkImage from "figma:asset/0c80b7ff175fb726e05945eea635b317d5bf5493.png";
+
+const qlaseImage = "/qlase.png";
+const caffeKatImage = "/caffe-kat.png";
+const tikTalkImage = "/tiktalk.png";
 
 type DevProject = {
   type: "dev";
