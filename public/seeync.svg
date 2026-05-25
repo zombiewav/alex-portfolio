@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#1d4ed8" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" rx="48" fill="url(#bg)" />
+  <path d="M240 180h720a36 36 0 0 1 36 36v368a36 36 0 0 1-36 36H240a36 36 0 0 1-36-36V216a36 36 0 0 1 36-36Z" fill="rgba(255,255,255,0.08)" />
+  <rect x="320" y="260" width="560" height="56" rx="28" fill="#1e40af" opacity="0.95" />
+  <rect x="320" y="350" width="520" height="38" rx="19" fill="#2563eb" opacity="0.9" />
+  <rect x="320" y="410" width="420" height="38" rx="19" fill="#60a5fa" opacity="0.8" />
+  <rect x="320" y="470" width="320" height="38" rx="19" fill="#93c5fd" opacity="0.7" />
+  <rect x="320" y="540" width="280" height="42" rx="21" fill="#bfdbfe" opacity="0.8" />
+  <circle cx="880" cy="450" r="84" fill="#1e3a8a" opacity="0.85" />
+  <path d="M880 380v140M820 450h120" stroke="#f97316" stroke-width="16" stroke-linecap="round" />
+  <text x="600" y="160" text-anchor="middle" fill="#ffffff" font-family="Inter, sans-serif" font-size="64" font-weight="800">SEEYNC</text>
+  <text x="600" y="220" text-anchor="middle" fill="#a5b4fc" font-family="Inter, sans-serif" font-size="28">Student Portal</text>
+</svg>

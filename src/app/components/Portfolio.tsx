@@ -1,10 +1,12 @@
 import { useState, useEffect } from "react";
-import { Tag, Share2, Mail, Globe, X, ZoomIn } from "lucide-react";
+import { Tag, X, ZoomIn } from "lucide-react";
 import { useTheme } from "../contexts/ThemeContext";
 
 const qlaseImage = "/qlase.png";
 const caffeKatImage = "/caffe-kat.png";
 const tikTalkImage = "/tiktalk.png";
+const timekeeperImage = "/timekeeper.svg";
+const seeyncImage = "/seeync.svg";
 
 type DevProject = {
   type: "dev";
@@ -19,23 +21,7 @@ type DevProject = {
   result: string;
 };
 
-type VAProject = {
-  type: "va";
-  title: string;
-  category: string;
-  tag: string;
-  tagColor: string;
-  tagBg: string;
-  icon: React.ElementType;
-  gradient: string;
-  darkGradient: string;
-  description: string;
-  tech: string[];
-  result: string;
-  accent: string;
-};
-
-type Project = DevProject | VAProject;
+type Project = DevProject;
 
 const devProjects: DevProject[] = [
   {
@@ -74,53 +60,29 @@ const devProjects: DevProject[] = [
     tech: ["React", "Node.js", "Real-time", "Web App"],
     result: "Campus Chat Platform",
   },
-];
-
-const vaProjects: VAProject[] = [
   {
-    type: "va",
-    title: "Social Media Management",
-    category: "Virtual Assistant",
-    tag: "VA",
-    tagColor: "#a855f7",
-    tagBg: "#fdf4ff",
-    icon: Share2,
-    gradient: "linear-gradient(135deg, #fdf4ff, #ede9fe)",
-    darkGradient: "linear-gradient(135deg, rgba(168,85,247,0.12), rgba(139,92,246,0.08))",
-    description: "Managed Facebook, TikTok, and Instagram accounts for multiple clients — creating content calendars, scheduling posts, and growing organic engagement.",
-    tech: ["Facebook", "TikTok", "Instagram", "Content Planning"],
-    result: "Organic growth",
-    accent: "#a855f7",
+    type: "dev",
+    title: "TimeKeeper",
+    category: "Web App",
+    tag: "React",
+    tagColor: "#c026d3",
+    tagBg: "#f5d0fe",
+    image: timekeeperImage,
+    description: "A sleek timekeeping dashboard built for admin review, alarm approvals, and messaging with a polished interface.",
+    tech: ["React", "UI Design", "Responsive", "Dashboard"],
+    result: "Time management dashboard",
   },
   {
-    type: "va",
-    title: "Email Outreach",
-    category: "Virtual Assistant",
-    tag: "VA",
-    tagColor: "#f59e0b",
-    tagBg: "#fffbeb",
-    icon: Mail,
-    gradient: "linear-gradient(135deg, #fffbeb, #fef3c7)",
-    darkGradient: "linear-gradient(135deg, rgba(245,158,11,0.12), rgba(251,191,36,0.08))",
-    description: "Handled cold email campaigns and inbox management — crafting outreach sequences, following up with leads, and tracking campaign results.",
-    tech: ["Cold Email", "Lead Follow-up", "Inbox Mgmt", "Campaigns"],
-    result: "Higher response rates",
-    accent: "#f59e0b",
-  },
-  {
-    type: "va",
-    title: "Web Development (VA)",
-    category: "Virtual Assistant",
-    tag: "VA",
-    tagColor: "#10b981",
-    tagBg: "#f0fdf4",
-    icon: Globe,
-    gradient: "linear-gradient(135deg, #f0fdf4, #dcfce7)",
-    darkGradient: "linear-gradient(135deg, rgba(16,185,129,0.12), rgba(52,211,153,0.08))",
-    description: "Provided web development services as a virtual contractor — building and updating WordPress and HTML sites for clients remotely.",
-    tech: ["WordPress", "HTML/CSS", "Content Updates", "Remote Dev"],
-    result: "Sites delivered",
-    accent: "#10b981",
+    type: "dev",
+    title: "SEEYNC Student Portal",
+    category: "Web App",
+    tag: "React",
+    tagColor: "#f97316",
+    tagBg: "#ffedd5",
+    image: seeyncImage,
+    description: "A student portal for tracking tasks, event updates, and fund transparency with an intuitive, modern login experience.",
+    tech: ["React", "UI/UX", "Dashboard", "Student Portal"],
+    result: "Student task & status portal",
   },
 ];
 
@@ -140,9 +102,6 @@ function Modal({ project, isDark, onClose }: { project: Project; isDark: boolean
   const titleColor = isDark ? "#f1f5f9" : "#0f172a";
   const descColor = isDark ? "#94a3b8" : "#64748b";
   const cardBg = isDark ? "#111827" : "white";
-
-  const isVA = project.type === "va";
-  const Icon = isVA ? project.icon : null;
 
   return (
     <div
@@ -165,27 +124,13 @@ function Modal({ project, isDark, onClose }: { project: Project; isDark: boolean
         </button>
 
         {/* Banner */}
-        {!isVA && project.type === "dev" ? (
-          <div className="w-full" style={{ background: "#0a0f1e" }}>
-            <img
-              src={project.image}
-              alt={project.title}
-              className="w-full h-auto block"
-            />
-          </div>
-        ) : isVA && Icon ? (
-          <div
-            className="w-full flex items-center justify-center"
-            style={{ height: 220, background: isDark ? (project as VAProject).darkGradient : (project as VAProject).gradient }}
-          >
-            <div
-              className="w-24 h-24 rounded-2xl flex items-center justify-center shadow-lg"
-              style={{ background: isDark ? "#1a2235" : "white" }}
-            >
-              <Icon size={44} style={{ color: (project as VAProject).accent }} />
-            </div>
-          </div>
-        ) : null}
+        <div className="w-full" style={{ background: "#0a0f1e" }}>
+          <img
+            src={project.image}
+            alt={project.title}
+            className="w-full h-auto block"
+          />
+        </div>
 
         {/* Content */}
         <div className="p-8">
@@ -262,7 +207,7 @@ export function Portfolio() {
             Featured Projects
           </h2>
           <p className="mt-3 max-w-xl mx-auto" style={{ lineHeight: 1.7, color: subColor }}>
-            Real projects I've built and managed — from mobile apps and web platforms to social media and email campaigns.
+            Real projects I've built — from mobile apps and web platforms to polished, production-ready software.
           </p>
         </div>
 
@@ -331,76 +276,6 @@ export function Portfolio() {
           </div>
         </div>
 
-        {/* VA Projects */}
-        <div>
-          <div className="flex items-center gap-3 mb-6">
-            <span
-              className="px-4 py-1.5 rounded-full text-xs uppercase tracking-widest"
-              style={{ background: isDark ? "rgba(168,85,247,0.15)" : "#fdf4ff", color: "#a855f7", fontWeight: 700 }}
-            >
-              Virtual Assistant Work
-            </span>
-            <div className="flex-1 h-px" style={{ background: divider }} />
-          </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {vaProjects.map((p) => {
-              const Icon = p.icon;
-              return (
-                <div
-                  key={p.title}
-                  onClick={() => setSelected(p)}
-                  className="rounded-2xl overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-xl group cursor-pointer"
-                  style={{ background: cardBg, border: `1px solid ${cardBorder}` }}
-                >
-                  <div
-                    className="relative flex items-center justify-center"
-                    style={{ height: 210, background: isDark ? p.darkGradient : p.gradient }}
-                  >
-                    <div
-                      className="w-20 h-20 rounded-2xl flex items-center justify-center shadow-lg transition-transform duration-500 group-hover:scale-110"
-                      style={{ background: isDark ? "#1a2235" : "white" }}
-                    >
-                      <Icon size={38} style={{ color: p.accent }} />
-                    </div>
-                    {/* Zoom hint on hover */}
-                    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      <div
-                        className="w-12 h-12 rounded-full flex items-center justify-center"
-                        style={{ background: "rgba(0,0,0,0.45)", backdropFilter: "blur(6px)" }}
-                      >
-                        <ZoomIn size={20} color="white" />
-                      </div>
-                    </div>
-                    <span
-                      className="absolute top-3 left-3 px-3 py-1 rounded-full text-xs"
-                      style={{ background: p.tagBg, color: p.tagColor, fontWeight: 600 }}
-                    >
-                      {p.tag}
-                    </span>
-                    <span
-                      className="absolute bottom-3 right-3 px-2.5 py-1 rounded-full text-xs"
-                      style={{ background: isDark ? "rgba(0,0,0,0.4)" : "rgba(255,255,255,0.8)", color: p.accent, fontWeight: 600 }}
-                    >
-                      {p.result}
-                    </span>
-                  </div>
-                  <div className="p-5">
-                    <p className="text-xs mb-1" style={{ color: catColor }}>{p.category}</p>
-                    <h3 style={{ color: titleColor, fontWeight: 700, fontSize: "1.05rem" }} className="mb-2">{p.title}</h3>
-                    <p style={{ color: descColor, fontSize: "0.85rem", lineHeight: 1.65 }} className="mb-4 line-clamp-2">{p.description}</p>
-                    <div className="flex flex-wrap gap-1.5">
-                      {p.tech.map((t) => (
-                        <span key={t} className="flex items-center gap-1 px-2 py-0.5 rounded-md text-xs" style={{ background: techBg, color: techColor }}>
-                          <Tag size={9} />{t}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-        </div>
       </div>
     </section>
   );

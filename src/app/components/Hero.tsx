@@ -57,11 +57,11 @@ export function Hero() {
             </h1>
 
             <p className="mb-5" style={{ color: "#a5b4fc", fontWeight: 700, fontSize: "clamp(1.1rem, 2.5vw, 1.4rem)", lineHeight: 1.3 }}>
-              Developer & VA Specialist
+              Full-Stack Web & App Developer
             </p>
 
             <p className="mb-9" style={{ color: "#94a3b8", fontSize: "1rem", lineHeight: 1.8, maxWidth: 460 }}>
-              I build full-stack web and mobile apps, and deliver top-tier virtual assistant services — from React frontends to social media management.
+              I build full-stack web and mobile applications with modern frameworks, clean architecture, and polished user experiences.
             </p>
 
             <div className="flex flex-wrap gap-3">

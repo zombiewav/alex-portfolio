@@ -6,8 +6,8 @@ const highlights = [
   "Backend: Node.js, Python, C, C++, MySQL, Electron",
   "Mobile: Flutter & Kotlin app development",
   "WordPress website development & maintenance",
-  "Social media management (Facebook, TikTok, Instagram)",
-  "Scheduling, email monitoring & data entry",
+  "API integration and backend architecture",
+  "Responsive web and cross-platform app development",
 ];
 
 export function About() {
@@ -69,14 +69,13 @@ export function About() {
                 Alex
               </p>
               <p style={{ color: "#6366f1", fontSize: "0.875rem", fontWeight: 600 }} className="mb-6">
-                Developer & VA Specialist
+                Full-Stack Developer
               </p>
 
               {/* Role badges */}
               <div className="w-full flex flex-col gap-3 mb-6">
                 {[
                   { icon: Code2, label: "Full-Stack Developer", color: "#6366f1", bg: isDark ? "rgba(99,102,241,0.12)" : "#eef2ff" },
-                  { icon: HeadphonesIcon, label: "Virtual Assistant", color: "#10b981", bg: isDark ? "rgba(16,185,129,0.1)" : "#f0fdf4" },
                 ].map(({ icon: Icon, label, color, bg: rbg }) => (
                   <div
                     key={label}
@@ -107,10 +106,10 @@ export function About() {
               I build, manage, and help your business grow
             </h3>
             <p style={{ color: textSecondary, lineHeight: 1.8 }} className="mb-4">
-              I'm Alex — a full-stack developer and virtual assistant with a passion for building clean digital products and keeping businesses organized. I develop web and mobile applications using modern stacks, and provide reliable remote admin support.
+              I'm Alex — a full-stack developer with a passion for building clean digital products and polished user experiences. I develop web and mobile applications using modern stacks and robust architecture.
             </p>
             <p style={{ color: textSecondary, lineHeight: 1.8 }} className="mb-8">
-              Whether you need a React web app, a Flutter mobile app, or someone to manage your social media and inbox — I'm the one-stop partner that saves you time and delivers quality results.
+              Whether you need a React web app, a Flutter mobile app, or a complete software solution — I create scalable, reliable products that help your business grow.
             </p>
 
             <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">

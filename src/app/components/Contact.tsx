@@ -67,7 +67,7 @@ export function Contact() {
                 <span className="text-white text-sm" style={{ fontWeight: 600 }}>Currently Available</span>
               </div>
               <p style={{ color: "#c7d2fe", fontSize: "0.85rem", lineHeight: 1.65 }}>
-                I'm open to new dev and VA projects, both short-term and long-term. Let's discuss your needs!
+                I'm open to new development projects, both short-term and long-term. Let's discuss your needs!
               </p>
             </div>
           </div>

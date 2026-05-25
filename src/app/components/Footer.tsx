@@ -20,8 +20,8 @@ const servicesList = [
   "Backend Development",
   "Mobile Apps",
   "WordPress",
-  "Social Media Management",
-  "Virtual Assistant",
+  "Web App Design",
+  "Software Engineering",
 ];
 
 export function Footer() {
@@ -53,7 +53,7 @@ export function Footer() {
               <span style={{ color: "white", fontWeight: 800, fontSize: "1.1rem" }}>Alex</span>
             </div>
             <p style={{ color: "#64748b", fontSize: "0.875rem", lineHeight: 1.7 }} className="mb-6">
-              Full-Stack Developer & Virtual Assistant helping businesses build, manage, and grow through remote support.
+              Full-Stack Developer helping businesses build and grow with modern web, app, and software solutions.
             </p>
             <div className="flex gap-3">
               {socialLinks.map(({ icon: Icon, href, label }) => (
